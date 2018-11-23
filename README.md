@@ -20,7 +20,7 @@ lcsts: If you've got this dataset in xml format,
 1. first extract the source content and summary, save as *.src and *.tgt respectively.
 2. run preprocess.py at root dir to preprocess the data, refer to following script:
   ```
-  python preprocess.py -train_src data/lcsts/PART_I.src -train_tgt data/lcsts/PART_I.tgt -valid_src data/lcsts/PART_II.src -valid_tgt data/lcsts/PART_II.tgt -save_data data/lcsts/lcsts.low.share
+  python preprocess.py -train_src data/lcsts/PART_I.src -train_tgt data/lcsts/PART_I.tgt -valid_src data/lcsts/PART_II.src -valid_tgt data/lcsts/PART_II.tgt -save_data data/lcsts/lcsts.low.share -share -src_char -tgt_char
   ```
 
 ## Training config
@@ -31,4 +31,4 @@ in _lcsts.yaml_, remember to modify _data_ field
 CUDA_VISIBLE_DEVICES=0 python train.py -config lcsts.yaml
 ```
 1. You're supposed to run this script in a command line instead of any IDE.
-2. _CUDA_VISIBLE_DEVICES_ if optional, remove this to use cpu.
+2. _CUDA_VISIBLE_DEVICES_ is optional, remove this to use cpu.
